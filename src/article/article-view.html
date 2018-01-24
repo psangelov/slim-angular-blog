@@ -1,0 +1,35 @@
+<ng-include src="'/src/partials/header.html'"></ng-include>
+    <div class="container" ng-if="!error">
+        <div class="row">
+            <div class="col-md-4" style="width:100%">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{article.title}}</strong>
+                    </div>
+                    <div class="panel-heading">
+                        <span style="width:50%float:right;">{{article.publish_date}}</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p>{{article.content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- show if errors with api or missing id of article -->
+    <div class="container" ng-if="error">
+        <div class="row">
+            <div class="col-md-4" style="width:100%">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:red">
+                        <strong>{{errorMessage}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+<ng-include src="'/src/partials/footer.html'"></ng-include>

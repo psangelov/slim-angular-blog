@@ -1,0 +1,14 @@
+<div class="container" ng-if="error || success">
+    <div class="row">
+        <div class="col-md-4" style="width:100%">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color:red" ng-if="error">
+                    <strong>{{errorMessage}}</strong>
+                </div>
+                <div class="panel-heading" style="background-color:green" ng-if="success">
+                    <strong>{{successMessage}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

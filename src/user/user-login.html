@@ -1,0 +1,26 @@
+<ng-include src="'/src/partials/header.html'"></ng-include>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="recent">
+                    <button class="btn-primarys"><h3>Login</h3></button>
+                </div>
+                <form ng-submit="loginUser()" style="color:black">
+                    <div class="form-group">
+                        <div>
+                            <label for="user_login_email" class="required">Email</label>
+                             <input type="text" id="user_register_email" ng-model="userForm.email" name="email" required="required" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="user_login_password" class="required">Password</label>
+                            <input type="password" id="user_register_password" ng-model="userForm.password" name="password" required="required" class="form-control" />
+                        </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- show if errors with api or missing id of article -->
+    <ng-include src="'/src/partials/error.html'"></ng-include>
+<ng-include src="'/src/partials/footer.html'"></ng-include>

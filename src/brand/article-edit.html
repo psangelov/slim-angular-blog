@@ -1,0 +1,29 @@
+<ng-include src="'/src/partials/header.html'"></ng-include>
+    <div class="container" ng-if="owner">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="recent">
+                    <button class="btn-primarys"><h3>Edit an article</h3></button>
+                </div>
+                <form ng-submit="editArticle()" style="color:black">
+                    <div class="form-group">
+                        <div>
+                            <label for="add_article_title" class="required">Title</label>
+                            <input type="text" id="add_article_title" name="title" ng-model="articleForm.title" required="required" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="add_article_content" class="required">Content</label>
+                            <textarea id="add_article_content" name="content" ng-model="articleForm.content" required="required" rows="10" class="form-control">
+                            </textarea>
+                        </div>
+                    </div>
+                    <br/>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- show if errors with api or missing id of article -->
+    <ng-include src="'/src/partials/error.html'"></ng-include>
+<ng-include src="'/src/partials/footer.html'"></ng-include>

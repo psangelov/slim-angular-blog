@@ -1,0 +1,40 @@
+<ng-include src="'/src/partials/header.html'"></ng-include>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="item in articles">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a ui-sref="articleView({id: item.id})"><strong>{{item.title}}</strong></a>
+                    </div>
+                    <div class="panel-heading" style="height:42px">
+                        <span style="width:50%;float:left;">{{item.publish_date}}</span>
+                        <span style="width:50%;float:right;" ng-if="user == item.user">
+                            <a ui-sref="articleEdit({id: item.id})">Edit</a> | 
+                            <a href="javascript:" ng-click="deleteArticle(item.id)">Delete</a>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p>{{item.content| limitTo:225}}...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>              
+        </div>
+    </div>
+
+    <!-- show if errors with api or missing id of article -->
+    <div class="container" ng-if="error">
+        <div class="row">
+            <div class="col-md-4" style="width:100%">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:red">
+                        <strong>{{errorMessage}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+<ng-include src="'/src/partials/footer.html'"></ng-include>
